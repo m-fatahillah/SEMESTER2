@@ -30,8 +30,8 @@ class Queue13 {
     }
 
     public void peek(){
-        if (IsEmpty()){
-            System.out.println("Eelemen terdepan " + data[front]);
+        if (!IsEmpty()){
+            System.out.println("Elemen terdepan: " + data[front]);
         } else {
             System.out.println("Queue masih kosong: ");
         }
@@ -69,7 +69,7 @@ class Queue13 {
             if (IsEmpty()){
                 front = rear = 0;
             } else {
-                if rear == max - 1){
+                if (rear == max - 1){
                     rear = 0;
                 } else {
                     rear++;

@@ -12,23 +12,24 @@ public class QueueMain13 {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Masukkan kapasitas queue: ");
+        System.out.print("Masukkan kapasitas queue: ");
         int n = sc.nextInt();
         Queue13 Q = new Queue13(n);
         int pilih;
 
         do {
+            menu();
             pilih = sc.nextInt();
             switch (pilih) {
                 case 1:
-                    System.out.println("Masukkan data baru: ");
+                    System.out.print("Masukkan data baru: ");
                     int dataMasuk = sc.nextInt();
                     Q.Enqueue(dataMasuk);
                     break;
                 case 2:
                     int dataKeluar = Q.Dequeue();
                     if (dataKeluar != 0) {
-                        System.out.println("Data yang dikeluarkan: " + dataKeluar);
+                        System.out.print("Data yang dikeluarkan: " + dataKeluar);
                         break;
                     }
                 case 3:
@@ -43,6 +44,7 @@ public class QueueMain13 {
                 
             }
         } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5);
+    sc.close();
     }
     
 }
