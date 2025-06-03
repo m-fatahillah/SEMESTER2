@@ -35,6 +35,17 @@ public class SingleLinkedList13 {
 
     }
 
+    public void addlast(Mahasiswa13 input) {
+        NodeMahasiswa13 ndInput = new NodeMahasiswa13(input, null);
+        if (isEmpty()) {
+            head = ndInput;
+            tail = ndInput;
+        } else {
+            tail.next = ndInput;
+            tail = ndInput;
+        }
+    }
+
     public void insertAfter(String key, Mahasiswa13 input) {
         NodeMahasiswa13 ndInput = new NodeMahasiswa13(input, null);
         NodeMahasiswa13 temp = head;
