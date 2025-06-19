@@ -67,23 +67,10 @@ public class DLLMain{
                     list.removeAfter(nim);
                 }
                 case 8 -> {
-                    System.out.print("Masukkan NIM yang ingin ditambah setelahnya: ");
-                    String nim = scan.nextLine();
+                    System.out.print("Masukkan setelah NIM : ");
+                    String keyNim = scan.nextLine();
                     Mahasiswa13 mhs = inputMahasiswa13(scan);
-                    Node13 current = list.search(nim);
-                    if (current == null) {
-                        System.out.println("NIM tidak ditemukan.");
-                    } else if (current == list.tail) {
-                        list.addLast(mhs);
-                    } else {
-                        int idx = 0;
-                        Node13 temp = list.head;
-                        while (temp != null && temp != current) {
-                            temp = temp.next;
-                            idx++;
-                        }
-                        list.add(idx + 1, mhs);
-                    }
+                    list.insertAfter(keyNim, mhs);
                 }
                 case 9 -> {
                     System.out.print("Masukkan index: ");
@@ -122,4 +109,5 @@ public class DLLMain{
                 }while (pilihan != 0);
                         scan.close();
                 }
+
 }
